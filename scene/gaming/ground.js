@@ -19,7 +19,7 @@ class Ground {
     // 走完一块，返回一块
     update() {
         var step = -4
-        if (this.movedDistance === 336) {
+        if (this.movedDistance === -336) {
             step = 336
         }
 
@@ -27,11 +27,7 @@ class Ground {
             t.x += step
         }
 
-        if (this.movedDistance === 336) {
-            this.movedDistance = 0
-        } else {
-            this.movedDistance += 4
-        }
+        this.movedDistance += step
     }
 
     draw() {
