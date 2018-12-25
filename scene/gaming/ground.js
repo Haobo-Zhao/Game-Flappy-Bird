@@ -20,7 +20,6 @@ class Ground {
     update() {
         var step = -4
         if (this.movedDistance === 336) {
-            this.movedDistance = 0
             step = 336
         }
 
@@ -28,7 +27,11 @@ class Ground {
             t.x += step
         }
 
-        this.movedDistance += 4
+        if (this.movedDistance === 336) {
+            this.movedDistance = 0
+        } else {
+            this.movedDistance += 4
+        }
     }
 
     draw() {
