@@ -6,9 +6,13 @@ class Animation {
         for (let i = 0; i <= 9; i++) {
             let animationName = name + i
             let texture = game.imageByName(animationName)
+            // 没有这张图片，说明到头了
+            if (!texture) {
+                // 这里如果用 return，就直接返回函数了，后面的 init 就没有办法执行到了
+                break
+            }
             this.textures.push(texture)
         }
-        
         this.init()
     }
 
@@ -26,8 +30,12 @@ class Animation {
         this.h = this.texture.height
     }
 
-    move(dx) {
+    moveX(dx) {
         this.x += dx
+    }
+
+    moveY(dy) {
+        this.y += dy
     }
 
     update() {

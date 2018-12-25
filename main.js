@@ -1,7 +1,11 @@
 // 启动游戏
 var __main = function () {
     var images = {
-        ground: 'img/sprite/ground.png'
+        ground: 'img/sprite/ground.png',
+        
+        yellowbird0: 'img/sprite/bird/yellowbird0.png',
+        yellowbird1: 'img/sprite/bird/yellowbird1.png',
+        yellowbird2: 'img/sprite/bird/yellowbird2.png',
     }
 
     var game = Game.instance(images, (g) => {
