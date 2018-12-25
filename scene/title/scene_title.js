@@ -17,6 +17,17 @@ class Scene_title extends Scene {
         // this.game.registerAction(' ', function(){
         //     self.bird.jump()
         // })
+
+        this.game.registerAction('a', function() {
+            self.bird.moveX(-5)
+            self.bird.flipX = true
+        })
+        
+        this.game.registerAction('d', function() {
+            self.bird.moveX(5)
+            self.bird.flipX = false
+        })
+
         window.addEventListener('keydown', function(event){
             if (event.key === ' ') {
                 self.bird.jump()

@@ -2,7 +2,7 @@ class Bird extends Animation {
     constructor(game) {
         super(game, 'yellowbird')
         this.vy = 0
-        this.ay = 0.2
+        this.ay = 0.5
     }
 
     static new(game) {
@@ -14,9 +14,6 @@ class Bird extends Animation {
         this.y += this.vy
         this.vy += this.ay
         // 限制 y方向的速度
-        if (this.vy > 10) {
-            this.vy = 10
-        }
         if (this.y + this.h > 700) {
             // 最后那个 2 是微调的效果
             // magic, don't touch
@@ -25,7 +22,6 @@ class Bird extends Animation {
     }
 
     jump() {
-        this.y -= 20
-        this.vy = 0
+        this.vy = -10
     }
 }

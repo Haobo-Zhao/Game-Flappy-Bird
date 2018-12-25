@@ -28,6 +28,7 @@ class Animation {
         this.y = 200
         this.w = this.texture.width
         this.h = this.texture.height
+        this.flipX = false
     }
 
     moveX(dx) {
@@ -48,7 +49,11 @@ class Animation {
     }
 
     draw() {
-        this.game.drawImage(this)
+        if (this.flipX) {
+            this.drawLeftwards()
+        } else {
+            this.game.drawImage(this)
+        }
     }
 
     drawLeftwards() {
@@ -56,7 +61,7 @@ class Animation {
         context.save()
         context.translate(this.x + this.w + this.x, 0)
         context.scale(-1, 1)
-        this.draw()
+        this.game.drawImage(this)
         context.restore()
     }
 
