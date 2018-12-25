@@ -2,6 +2,7 @@
 var __main = function () {
     var images = {
         ground: 'img/sprite/ground.png',
+        pipe: 'img/sprite/pipe/pipe-green.png',
         
         yellowbird0: 'img/sprite/bird/yellowbird0.png',
         yellowbird1: 'img/sprite/bird/yellowbird1.png',

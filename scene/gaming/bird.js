@@ -3,6 +3,7 @@ class Bird extends Animation {
         super(game, 'yellowbird')
         this.vy = 0
         this.ay = 0.5
+        this.rotation = 0
     }
 
     static new(game) {
@@ -11,17 +12,25 @@ class Bird extends Animation {
 
     update() {
         super.update()
+        // 重力加速度
         this.y += this.vy
         this.vy += this.ay
-        // 限制 y方向的速度
         if (this.y + this.h > 700) {
             // 最后那个 2 是微调的效果
             // magic, don't touch
             this.y = 700 - this.h + 2
         }
+
+        // 旋转
+        this.rotation += 2.5
+        if (this.rotation > 45) {
+            this.rotation = 45
+        }
     }
 
     jump() {
         this.vy = -10
+        // 旋转的角度
+        this.rotation = -45
     }
 }

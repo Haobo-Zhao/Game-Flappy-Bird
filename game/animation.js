@@ -49,19 +49,24 @@ class Animation {
     }
 
     draw() {
-        if (this.flipX) {
-            this.drawLeftwards()
-        } else {
-            this.game.drawImage(this)
-        }
-    }
-
-    drawLeftwards() {
         var context = this.game.context
+
         context.save()
-        context.translate(this.x + this.w + this.x, 0)
-        context.scale(-1, 1)
-        this.game.drawImage(this)
+
+        // 这一段闪转腾挪特别精彩，值得细细去品味
+        let w2 = this.w / 2
+        let h2 = this.h / 2
+        context.translate(this.x + w2, this.y + h2)
+        if (this.flipX) {
+            context.scale(-1, 1)
+        }
+        // 动画实例里面，有 rotation 这个属性才做这个旋转坐标系的操作
+        this.rotation && context.rotate(this.rotation * Math.PI / 180)
+        // 这里不管 x 轴翻转没翻转，都能够得到合适的结果
+        context.translate(-w2, -h2)
+
+        context.drawImage(this.texture, 0, 0)
+
         context.restore()
     }
 
