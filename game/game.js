@@ -20,7 +20,7 @@ class Game {
         this.context = this.canvas.getContext('2d')
         // bitmap， 如果用 css 来 设置 width 和 height 的话，是node的元素，不是 bitmap 的值，会出问题
         this.canvas.width = 600
-        this.canvas.height = 800
+        this.canvas.height = 700
 
         this.keys = {}
         this.actions = {}

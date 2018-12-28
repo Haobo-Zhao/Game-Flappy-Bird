@@ -15,10 +15,10 @@ class Bird extends Animation {
         // 重力加速度
         this.y += this.vy
         this.vy += this.ay
-        if (this.y + this.h > 700) {
+        if (this.y + this.h > 600) {
             // 最后那个 2 是微调的效果
             // magic, don't touch
-            this.y = 700 - this.h + 2
+            this.y = 600 - this.h + 2
         }
 
         // 旋转

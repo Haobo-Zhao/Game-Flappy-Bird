@@ -5,7 +5,7 @@ class Ground {
         for (let i = 0; i < 3; i++) {
             let tile = JoeImage.new(game, 'ground')
             tile.x = i * 336
-            tile.y = 700
+            tile.y = 600
             this.tiles.push(tile)
         }
         this.movedDistance = 0
