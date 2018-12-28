@@ -18,16 +18,16 @@ class Ground {
     // 左右左右走这样来回切换
     // 走完一块，返回一块
     update() {
-        var step = -4
+        var step = 3
         if (this.movedDistance === -336) {
-            step = 336
+            step = -336
         }
 
         for(let t of this.tiles) {
-            t.x += step
+            t.x -= step
         }
 
-        this.movedDistance += step
+        this.movedDistance -= step
     }
 
     draw() {

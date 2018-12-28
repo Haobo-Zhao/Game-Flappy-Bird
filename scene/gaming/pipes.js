@@ -9,7 +9,7 @@ class Pipes {
         // 水平方向，两排管子之间的间隔
         this.gap = 300
 
-        this.speed = 4
+        this.speed = 3
 
         for (var i = 0; i < 4; i++) {
             // p1 在上面
