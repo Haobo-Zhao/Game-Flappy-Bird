@@ -1,7 +1,16 @@
 class Scene_title extends Scene {
     constructor(game) {
         super(game)
-        
+
+        let sky = Sky.new(game)
+        this.addElement(sky)
+
+        let galaxy = Galaxy.new(game)
+        this.addElement(galaxy)
+
+        let comet = Comet.new(game)
+        this.addElement(comet)
+
         let pipes = Pipes.new(game)
         this.addElement(pipes)
 

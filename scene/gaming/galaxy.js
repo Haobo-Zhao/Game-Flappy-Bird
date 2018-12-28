@@ -1,6 +1,7 @@
 class Galaxy extends JoeImage {
     constructor(game) {
-        super(game, 'galaxy')
+        var type = randomBetween(1, 2)
+        super(game, 'galaxy' + type)
         this.setup()
     }
 
@@ -10,14 +11,18 @@ class Galaxy extends JoeImage {
     }
 
     setup() {
-        this.x = randomBetween(-200, 200)
-        this.y = - randomBetween(700, 950)
-        this.speed = 1
+        var type = randomBetween(1, 2)
+        this.texture = this.game.imageByName('galaxy' + type)
+        this.w = this.texture.width
+        this.h = this.texture.height
+        this.x = randomBetween(600, 700)
+        this.y = randomBetween(-100, 400)
+        this.speed = randomBetween(1, 2)
     }
 
     update() {
-        this.y += this.speed
-        if (this.y > this.game.canvas.height) {
+        this.x -= this.speed
+        if (this.x + this.w < 0) {
             this.setup()
         }
     }
