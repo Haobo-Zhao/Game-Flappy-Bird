@@ -1,15 +1,9 @@
 class Scene_title extends Scene {
     constructor(game) {
         super(game)
-
-        let pipe1 = Pipe.new(game)
-        this.addElement(pipe1)
         
-        let pipe2 = Pipe.new(game)
-        pipe2.x = 900
-        pipe2.y = 500
-        this.addElement(pipe2)
-        log(pipe2)
+        let pipes = Pipes.new(game)
+        this.addElement(pipes)
 
         let ground = Ground.new(game)
         this.ground = ground
