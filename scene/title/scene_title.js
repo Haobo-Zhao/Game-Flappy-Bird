@@ -8,8 +8,8 @@ class Scene_title extends Scene {
         let galaxy = Galaxy.new(game)
         this.addElement(galaxy)
 
-        let comet = Comet.new(game)
-        this.addElement(comet)
+        // let comet = Comet.new(game)
+        // this.addElement(comet)
 
         let pipes = Pipes.new(game)
         this.addElement(pipes)
