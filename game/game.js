@@ -33,6 +33,8 @@ class Game {
         // 不绑定的话，
         // 在第二次运行 updateAndDraw 的时候，updateAndDraw 函数里面的 this 就指向 window 了，会报错
         this.updateAndDraw = this.updateAndDraw.bind(this)
+
+        this.debug = config.debug
     }
 
     // 单例模式
@@ -130,7 +132,10 @@ class Game {
         // draw
         this.update && this.draw()
 
-        // 在构造函数里面，已经把 this.updateAndDraw 绑定到对象本身来了
+        if (this.debug) {
+            this.scene.fps = config.fps.value
+        }
+        // 在构造函数里面，已经把 this.updateAndDraw 的 this 绑定到对象本身来了，避免回调时候的 this 陷阱
         window.setTimeout(this.updateAndDraw, 1000 / this.scene.fps)
     }
 

@@ -31,12 +31,11 @@ class Scene {
 
     update() {
         // 如果允许 debug 模式
-        if (this.debugModeEnabled) {
-            // 使用可以动态调整的 config.fps
-            this.fps = config.fps
+        if (config.debug) {
             for (let i = 0; i < this.elements.length; i++) {
                 let e = this.elements[i]
-                e.debug || e.debug()
+                // 有 debug 这个函数才跑才跑
+                e.debug && e.debug()
             }
         }
 

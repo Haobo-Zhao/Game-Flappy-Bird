@@ -27,7 +27,7 @@ class Galaxy extends JoeImage {
         }
     }
 
-    debug() {
-        this.speed = config.galaxy_speed
-    }
+    // debug() {
+    //     this.speed = config.galaxy_speed
+    // }
 }
