@@ -8,11 +8,12 @@ const e = function(selector) {
 // 多重影分身,es = elements
 const es = selector => document.querySelectorAll(selector)
 
+// 这样灵活性更大
 const bindAll = function(selector, eventType, callback) {
     var elements = es(selector)
     for (let e of elements) {
-        // 后面用一个函数表达式，把 callback 包起来，这样更加灵活，想做什么操作都可以在里面做
-        // 而不需要严格适配传进来的 callback
+        // 后面用一个函数表达式，把 callback 包起来，这样更加灵活，想做什么操作都可以在 callback 之前做
+        // 而不需要严格适配传进来的 callback 的参数
         e.addEventListener(eventType, function(event) {
             callback(event)
         })

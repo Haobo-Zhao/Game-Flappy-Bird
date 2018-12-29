@@ -75,10 +75,13 @@ const bindEvents = function () {
     bindAll('.joe-slider-control', 'input', function (event) {
         // 拿到变动的 element
         let target = event.target
+        let item = target.dataset.item
+        let value = target.value
         // 更新全局配置
-        eval(`${target.dataset.item}.value = ${target.value}`)
+        eval(`${item}.value = ${value}`)
         // 更新这个 item 显示的值
-        target.closest('div').querySelector('.description-control').innerHTML = target.value
+        let span = target.closest('div').querySelector('.description-control')
+        span.innerHTML = value
     })
 }
 
