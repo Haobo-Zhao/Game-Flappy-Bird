@@ -75,6 +75,9 @@ const bindEvents = function () {
     }
 }
 
-generateAllControls()
+const setConfiguration = function () {
+    generateAllControls()
+    bindEvents()
+}
 
-bindEvents()
+setConfiguration()
