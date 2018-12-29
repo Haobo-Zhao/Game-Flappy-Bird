@@ -1,5 +1,10 @@
 const log = console.log.bind(console)
 
+// shortcut
+const e = function(selector) {
+    return document.querySelector(selector)
+}
+
 const imageFromPath = function(path) {
     var image = new Image()
     image.src = path

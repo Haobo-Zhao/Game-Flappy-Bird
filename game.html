@@ -11,39 +11,45 @@
             border: 1px solid #000000;
         }
     </style>
-    <!-- 全局配置 -->
-    <script src="game/config.js"></script>
-
-    <!-- 游戏容器相关的东西,和场景不一样 -->
-    <script src="game/utils.js"></script>
-    <script src="game/game.js"></script>
-    <script src="game/scene.js"></script>
-    <script src="game/joe_image.js"></script>
-    <script src="game/animation.js"></script>
-
-    <!-- gaming 场景相关图像资源 -->
-    <script src="scene/gaming/scene_gaming.js"></script>
-    <script src="scene/gaming/sky.js"></script>
-    <script src="scene/gaming/comet.js"></script>
-    <script src="scene/gaming/galaxy.js"></script>
-    <script src="scene/gaming/particle_system.js"></script>
-    <script src="scene/gaming/particle.js"></script>
-    
-    <!-- gaming 场景相关逻辑对象 -->
-    <script src="scene/gaming/ground.js"></script>
-    <script src="scene/gaming/pipe.js"></script>
-    <script src="scene/gaming/pipes.js"></script>
-    <script src="scene/gaming/bird.js"></script>
-
-    <!-- title 和 game_over 场景 -->
-    <script src="scene/title/scene_title.js"></script>
-    <script src="scene/game_over/scene_game_over.js"></script>
 </head>
 
 <body>
     <canvas id="id-canvas"></canvas>
+    <hr>
+    <div id="id-container-controls">
+        
+    </div>
 </body>
 
+<!-- utils, 全局配置文件 和 实时更新游戏配置的逻辑，加控制组件啊什么都在这边 -->
+<script src="game/utils.js"></script>
+<script src="game/config.js"></script>
+
+<!-- 游戏容器相关的东西,和场景不一样 -->
+<script src="game/game.js"></script>
+<script src="game/scene.js"></script>
+<script src="game/joe_image.js"></script>
+<script src="game/animation.js"></script>
+
+<!-- gaming 场景相关图像资源 -->
+<script src="scene/gaming/scene_gaming.js"></script>
+<script src="scene/gaming/sky.js"></script>
+<script src="scene/gaming/comet.js"></script>
+<script src="scene/gaming/galaxy.js"></script>
+<script src="scene/gaming/particle_system.js"></script>
+<script src="scene/gaming/particle.js"></script>
+
+<!-- gaming 场景相关逻辑对象 -->
+<script src="scene/gaming/ground.js"></script>
+<script src="scene/gaming/pipe.js"></script>
+<script src="scene/gaming/pipes.js"></script>
+<script src="scene/gaming/bird.js"></script>
+
+<!-- title 和 game_over 场景 -->
+<script src="scene/title/scene_title.js"></script>
+<script src="scene/game_over/scene_game_over.js"></script>
+
+<!-- 整个游戏的启动程序 -->
 <script src="main.js"></script>
 
 </html>
